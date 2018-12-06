@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopify</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="{% static 'CSS/estilo.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<nav class="navbar justify-content-end navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="logo">
+                <img src="/static/img/logo.png" style="width: 200px; height: 40px; margin-top: .5em"> </a>
+        </div>
+    </div>
+</nav>
+
+<body>
+
+<div class="row">
+    <div class="container">
+        <div class="col" align="right">
+            <p align="right"><h2 color = #5ADB26><bold>Gestion de Ventas</bold></h2></p>
+        </div>
+        <div class="col" align="left">
+            <h4><u>Indicadores Económicos</u></h4>
+            <li type="square">Dolar : <strong><strong>{{data.result.value}}</strong></strong></li>
+            <li type="square">Actializado : <strong><strong>{{data.result.updated|truncatechars_html:13}}</strong></strong></li>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.location.href='//127.0.0.1:8000/productos'" >Ingreso de Productos</button>
+        <br>
+        <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.location.href='//127.0.0.1:8000/listar'" >Listar Productos</button>
+        <br>
+        <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.location.href='http://127.0.0.1:8000/admin/app/venta/add/'">Ingreso de Ventas</button>
+        <br>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='http://127.0.0.1:8000/admin/app'">Administración Shopify</button>
+
+    </div>
+</div>
+</body>
+<br>
+<br>
+<br>
+<br>
+<footer>
+    <div class="container">
+        <strong><p style="color:green;">Desarrollado por: David Regular - Jorge Abarza - Felipe Gallardo</p></strong>
+        <p style="color:green:">Examen Transversal Diciembre 2018</p>
+    </div>
+</footer>
+
+
+
+</html>

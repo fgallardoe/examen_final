@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopify</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="{% static 'CSS/estilo.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<nav class="navbar justify-content-end navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="logo">
+                <img src="/static/img/logo.png" style="width: 200px; height: 40px; margin-top: .5em"> </a>
+        </div>
+    </div>
+</nav>
+
+<Div>
+<div class="row">
+        <div class="container">
+        <div class="col" align="right">
+            <p align="right"><h2 color = #5ADB26><bold>Ingreso de Productos</bold></h2></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" >
+    <div class="col-md-8">
+    <form action="/productos/crear" method="post">
+        {% csrf_token %}
+               <br>
+        <div class="form-group">
+            <label for="id_producto" class="col-sm-2 control-label">Id Producto</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="id_producto" id="id_producto" placeholder="codigo producto" title="prod" required="required">
+                <br>
+            </div>
+        </div>
+        <br>
+        <br>
+            <div class="form-group">
+                <label for="nom_producto" class="col-sm-2 control-label">Nombre Producto</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="nom_producto" id="nom_producto" pattern="{3,30}" title="Nombre del Producto" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="form-group">
+                <label for="desc_producto" class="col-sm-2 control-label">Descripción</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="desc_producto" id="desc_producto" title="Descripcion" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="tipo_producto" class="col-sm-2 control-label">Tipo Producto</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="tipo_producto" id="tipo_producto" placeholder="Cod. Categoría" title="Id Categoria" pattern="{3}" maxlength="3" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+         <div class="form-group">
+            <label for="precio_producto" class="col-sm-2 control-label">Precio Producto</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="precio_producto" id="precio_producto" placeholder="precio producto" title="precio_producto" required="required">
+                <br>
+            </div>
+        </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Grabar Prdoucto</button>
+                <button type="button" class="btn btn-danger" onclick="window.location.href='//127.0.0.1:8000/'" >Cancelar</button>
+            </div>
+        </div>
+
+</body>
+<br>
+<br>
+<br>
+<br>
+<footer>
+    <div class="container">
+        <strong><p style="color:green;">Desarrollado por: David Regular - Jorge Abarza - Felipe Gallardo</p><strong>
+        <p style="color:green:">Examen Transversal Diciembre 2018</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopify</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="{% static 'CSS/estilo.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<nav class="navbar justify-content-end navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="logo">
+                <img src="/static/img/logo.png" style="width: 200px; height: 40px; margin-top: .5em"> </a>
+        </div>
+    </div>
+</nav>
+
+
+<body>
+<div class="container">
+<div class="row" >
+ <h1>Listado de Productos</h1>
+</div>
+</div>
+
+<div class="container">
+    <table style="width:100%">
+  <tr>
+      <th>Nº ID</th>
+    <th>ID PROD.</th>
+    <th>NOMBRE PROD.</th>
+    <th>DESCRIPCION</th>
+      <th>TIPO PROD.</th>
+      <th>PRECIO</th>
+  </tr>
+  <tr>
+      {%for e in elementos%}
+      <td>{{e.pk}}</td>
+    <td>{{e.id_producto}}</td>
+    <td>{{e.nom_producto}}</td>
+    <td>{{e.desc_producto}}</td>
+      <td>{{e.tipo_producto}}</td>
+      <td>{{e.precio_producto}}</td>
+      <td><a style="color:blue;" href="eliminar/{{e.pk}}">Eliminar</a></td>
+  </tr>
+         {%endfor%}
+
+
+</table>
+    <br>
+<br>
+</div>
+    <div class="container">
+         <button type="button" class="btn btn-danger" onclick="window.location.href='//127.0.0.1:8000/'" >Volver al Menú</button>
+    </div>
+</body>
+
+<br>
+<br>
+
+<footer >
+    <div class="container">
+        <strong><p style="color:green;">Desarrollado por: David Regular - Jorge Abarza - Felipe Gallardo</p><strong>
+        <p style="color:green:">Examen Transversal Diciembre 2018</p>
+    </div>
+</footer>
+</html>
